@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 这台 host 上每个项目站点各有自己的 sitemap；爬虫只读域名根这一份 robots.txt，
+# 所以在这里把它们全部声明出来。
+Sitemap: https://swaylq.github.io/sitemap.xml
+Sitemap: https://swaylq.github.io/danshari-skill/sitemap.xml
+Sitemap: https://swaylq.github.io/sijiao-skill/sitemap.xml

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>swaylq — agent 研究与开源</title>
+<meta name="description" content="swaylq 的开源索引：大师.skill（把一个行业蒸成一位 agent）、私教.skill（把任何技能蒸成一个带你从 0 学会它的私教）、断舍离.skill（第一个劝你删 skill 的 skill），以及 hermit-agent、Lambda 语言、情绪系统等 agent 基础设施。全部开源。">
+<meta name="author" content="swaylq">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1a18" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://swaylq.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="swaylq">
+<meta property="og:title" content="swaylq — agent 研究与开源">
+<meta property="og:description" content="大师.skill / 私教.skill / 断舍离.skill，以及跑 agent 的那一层基础设施。全部开源。">
+<meta property="og:url" content="https://swaylq.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://swaylq.github.io/",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "swaylq",
+    "url": "https://github.com/swaylq",
+    "description": "Agent researcher. Researching everything agent-related — harness, communication, memory, emotion, and distilling expertise into skills.",
+    "sameAs": ["https://github.com/swaylq", "https://master-skill.org/"]
+  }
+}
+</script>
+<style>
+  .sites { display:grid; gap:var(--s-4); grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:var(--s-8); }
+  @media (max-width:900px){ .sites{ grid-template-columns:1fr; } }
+  .site {
+    display:block; padding:var(--s-6); border:1px solid var(--rule); border-radius:var(--radius-lg);
+    background:var(--surface); text-decoration:none;
+    transition:border-color var(--dur), transform var(--dur);
+  }
+  .site:hover{ border-color:var(--ink-faint); transform:translateY(-1px); }
+  .site .nm{ font-weight:650; letter-spacing:-.01em; }
+  .site .nm .en{ color:var(--ink-faint); font-weight:500; font-size:var(--text-sm); }
+  .site .ds{ margin-top:var(--s-3); font-size:var(--text-sm); color:var(--ink-muted); line-height:1.6; }
+  .site .go{ margin-top:var(--s-4); font-size:var(--text-xs); color:var(--mark); font-weight:600; }
+  .repos{ margin-top:var(--s-6); display:grid; gap:var(--s-2) var(--s-6); grid-template-columns:repeat(2,minmax(0,1fr)); }
+  @media (max-width:760px){ .repos{ grid-template-columns:1fr; } }
+  .repos a{ display:flex; gap:var(--s-3); padding-block:var(--s-2); font-size:var(--text-sm); text-decoration:none; border-bottom:1px solid var(--rule-soft); }
+  .repos a:hover .rn{ color:var(--ink); }
+  .rn{ font-weight:600; color:var(--ink-muted); white-space:nowrap; }
+  .rd{ color:var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <a class="wordmark" href="/">sway<span class="dot">lq</span></a>
+    <nav class="topnav">
+      <a class="hide-sm" href="#sites">在线站点</a>
+      <a class="hide-sm" href="#repos">仓库</a>
+      <a href="https://github.com/swaylq">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="shell hero">
+    <p class="eyebrow">Agent researcher</p>
+    <h1>研究 agent 的一切，然后把它们开源<span class="dot">.</span></h1>
+    <p class="lede">
+      harness、通信、记忆、情绪，以及把专长蒸馏成 skill —— 这些方向上做出来的东西都在下面，
+      源码全部公开。
+    </p>
+  </section>
+
+  <section class="section" id="sites">
+    <div class="shell">
+      <div class="section-head">
+        <p class="kicker">在线站点</p>
+        <h2>可以直接点开看的三个</h2>
+      </div>
+      <div class="sites">
+        <a class="site" href="https://master-skill.org/">
+          <div class="nm">大师.skill <span class="en">master-skill</span></div>
+          <div class="ds">输入一个行业，自动跑六轨调研，提炼成一个可运行的行业 Master OS skill。装到任意 agent，它就进入「这一行资深人」的模式。已索引数十个行业，点开就能和大师对话。</div>
+          <div class="go">master-skill.org →</div>
+        </a>
+        <a class="site" href="https://swaylq.github.io/sijiao-skill/">
+          <div class="nm">私教.skill <span class="en">sijiao-skill</span></div>
+          <div class="ds">把方向反过来：不是让 AI 替你成为专家，而是蒸出一个记得你学到哪、按你水平出题批改、替你排间隔复习的私教，把你自己训练成会的人。</div>
+          <div class="go">查看官网 →</div>
+        </a>
+        <a class="site" href="https://swaylq.github.io/danshari-skill/">
+          <div class="nm">断舍离.skill <span class="en">danshari-skill</span></div>
+          <div class="ds">整个生态都在做加法，这个做减法：审计你装的全部 skill，把模型已经会的、harness 已自带的、MCP 已接管的归档移除。永不 rm，一条命令可恢复。</div>
+          <div class="go">查看官网 →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="repos">
+    <div class="shell">
+      <div class="section-head">
+        <p class="kicker">仓库</p>
+        <h2>还在维护的那些</h2>
+        <p>完整清单（含独立工具与 DeepSeek Harness 插件）在 <a href="https://master-skill.org/open-source">master-skill.org/open-source</a>。</p>
+      </div>
+
+      <h3 style="margin-top:var(--s-10);font-size:var(--text-base);color:var(--ink-muted)">Agent skills</h3>
+      <div class="repos">
+        <a href="https://github.com/swaylq/master-skill"><span class="rn">master-skill</span><span class="rd">把一整行的认知蒸成 agent</span></a>
+        <a href="https://github.com/swaylq/sijiao-skill"><span class="rn">sijiao-skill</span><span class="rd">把任何技能蒸成一个私教</span></a>
+        <a href="https://github.com/swaylq/danshari-skill"><span class="rn">danshari-skill</span><span class="rd">审计并移除不再需要的 skill</span></a>
+        <a href="https://github.com/swaylq/account-risk-skill"><span class="rn">account-risk-skill</span><span class="rd">账号封禁风险检测与合规预检</span></a>
+        <a href="https://github.com/swaylq/wenyanwen-skill"><span class="rn">wenyanwen-skill</span><span class="rd">让 AI 用文言文回话省 token</span></a>
+        <a href="https://github.com/swaylq/google-workspace"><span class="rn">google-workspace</span><span class="rd">Workspace 全套的 agent skill</span></a>
+        <a href="https://github.com/swaylq/session-memory-skill"><span class="rn">session-memory-skill</span><span class="rd">跨会话的持久记忆工具箱</span></a>
+        <a href="https://github.com/swaylq/moltbook-skill"><span class="rn">moltbook-skill</span><span class="rd">让 agent 上 Moltbook 发帖</span></a>
+      </div>
+
+      <h3 style="margin-top:var(--s-10);font-size:var(--text-base);color:var(--ink-muted)">Agent 基础设施</h3>
+      <div class="repos">
+        <a href="https://github.com/swaylq/hermit-agent"><span class="rn">hermit-agent</span><span class="rd">一条 npx 装出一个有人格和记忆的 agent</span></a>
+        <a href="https://github.com/swaylq/hermit-ui"><span class="rn">hermit-ui</span><span class="rd">多 agent 的 Web 控制台与本地网关</span></a>
+        <a href="https://github.com/swaylq/lambda-lang"><span class="rn">lambda-lang</span><span class="rd">agent 之间的原生通信语言</span></a>
+        <a href="https://github.com/swaylq/emotion-system"><span class="rn">emotion-system</span><span class="rd">七层情绪认知架构</span></a>
+        <a href="https://github.com/swaylq/agent-matrix"><span class="rn">agent-matrix</span><span class="rd">建在 Λ 上的 agent 通信平台</span></a>
+        <a href="https://github.com/swaylq/claude-code-pro"><span class="rn">claude-code-pro</span><span class="rd">回调驱动的低 token 监控</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-line">
+      <a href="https://github.com/swaylq">github.com/swaylq</a>
+      <a href="https://master-skill.org/">大师.skill</a>
+      <a href="https://swaylq.github.io/sijiao-skill/">私教.skill</a>
+      <a href="https://swaylq.github.io/danshari-skill/">断舍离.skill</a>
+      <a href="https://master-skill.org/open-source">完整开源清单</a>
+    </div>
+    <p class="closing">全部开源，MIT 或同等许可。</p>
+  </div>
+</footer>
+
+</body>
+</html>
