@@ -33,7 +33,7 @@
 }
 </script>
 <style>
-  .sites { display:grid; gap:var(--s-4); grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:var(--s-8); }
+  .sites { display:grid; gap:var(--s-4); grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:var(--s-8); }
   @media (max-width:900px){ .sites{ grid-template-columns:1fr; } }
   .site {
     display:block; padding:var(--s-6); border:1px solid var(--rule); border-radius:var(--radius-lg);
@@ -80,7 +80,7 @@
     <div class="shell">
       <div class="section-head">
         <p class="kicker">在线站点</p>
-        <h2>可以直接点开看的三个</h2>
+        <h2>可以直接点开看的四个</h2>
       </div>
       <div class="sites">
         <a class="site" href="https://master-skill.org/">
@@ -96,6 +96,11 @@
         <a class="site" href="https://swaylq.github.io/danshari-skill/">
           <div class="nm">断舍离.skill <span class="en">danshari-skill</span></div>
           <div class="ds">整个生态都在做加法，这个做减法：审计你装的全部 skill，把模型已经会的、harness 已自带的、MCP 已接管的归档移除。永不 rm，一条命令可恢复。</div>
+          <div class="go">查看官网 →</div>
+        </a>
+        <a class="site" href="https://swaylq.github.io/humanize-chinese/">
+          <div class="nm">humanize-chinese <span class="en">中文 AI 文本</span></div>
+          <div class="ds">检测中文文本有多像 AI 写的，再改写到读着像人写的。附六个文体的实测：这个分数在科普短文上还好用，在长篇博客上方向是反的。纯 Python 离线。</div>
           <div class="go">查看官网 →</div>
         </a>
       </div>
