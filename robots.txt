@@ -8,3 +8,4 @@ Sitemap: https://swaylq.github.io/danshari-skill/sitemap.xml
 Sitemap: https://swaylq.github.io/sijiao-skill/sitemap.xml
 Sitemap: https://swaylq.github.io/humanize-chinese/sitemap.xml
 Sitemap: https://swaylq.github.io/sunge-skill/sitemap.xml
+Sitemap: https://swaylq.github.io/ruxi-skill/sitemap.xml
